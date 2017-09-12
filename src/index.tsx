@@ -1,12 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { AppContainer } from 'react-hot-loader'
+import Application from './application'
 
-const App = () => {
-  return (
-    <div>
-      <p>Hello world!!!</p>
-    </div>
-  )
-}
+declare const module: any;
 
-ReactDOM.render(<App />, document.getElementById('app'))
+const rootEl = document.querySelector('#app');
+
+const render = Component => ReactDOM.render(
+  <AppContainer>
+    <Component />
+  </AppContainer>,
+  rootEl,
+);
+
+render(Application);
+
+if (module.hot) module.hot.accept('./application', () => render(Application));
