@@ -1,0 +1,11 @@
+*.log
+*.log.*
+.DS_Store
+node_modules
+dist
+*.jsx
+*.map
+!tests/index.js
+!/index*.js
+yarn.lock
+package-lock.json
