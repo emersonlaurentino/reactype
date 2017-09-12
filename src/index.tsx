@@ -7,7 +7,7 @@ declare const module: any;
 
 const rootEl = document.querySelector('#app');
 
-const render = Component => ReactDOM.render(
+const render = (Component) => ReactDOM.render(
   <AppContainer>
     <Component />
   </AppContainer>,
@@ -16,4 +16,4 @@ const render = Component => ReactDOM.render(
 
 render(Application);
 
-if (module.hot) module.hot.accept('./application', () => render(Application));
+if (module.hot) module.hot.accept('./application', () => render(Application))
